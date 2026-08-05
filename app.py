@@ -67,6 +67,9 @@ def load_models():
 try:
 
     models, scaler, encoders, features = load_models()
+    
+metrics = joblib.load("models/metrics.pkl")
+reports = joblib.load("models/classification_reports.pkl")
 
 except Exception as e:
 
@@ -344,6 +347,19 @@ st.download_button(
 st.markdown("---")
 
 st.header("Selected Model")
+
+st.subheader("Evaluation Metrics")
+
+metric_df = pd.DataFrame(
+    metrics[selected_model],
+    index=["Value"]
+).T
+
+st.table(metric_df)
+
+st.subheader("Classification Report")
+
+st.text(reports[selected_model])
 
 model_info = {
 

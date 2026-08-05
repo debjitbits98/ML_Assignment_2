@@ -236,14 +236,17 @@ else:
 
 if st.button("🚀 Predict"):
 
-    with st.spinner("Generating predictions..."):
+   with st.spinner("Generating predictions..."):
 
-        prediction = model.predict(X_input)
+    prediction = model.predict(X_input)
 
-        if hasattr(model, "predict_proba"):
-            probability = model.predict_proba(X_input)
-        else:
-            probability = None
+    if hasattr(model, "predict_proba"):
+
+        probability = model.predict_proba(X_input)
+
+    else:
+
+        probability = None
 
 result = data.copy()
 

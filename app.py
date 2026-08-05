@@ -246,6 +246,9 @@ else:
 
 result = data.copy()
 
+if "income" in result.columns:
+    result = result.drop(columns=["income"])
+
 result["Prediction"] = np.where(
 
     prediction == 1,

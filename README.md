@@ -241,11 +241,3 @@ Among all implemented models, the Random Forest Classifier achieved the highest 
 - Model deployment on cloud platforms
 
 ---
-
-## Author
-
-Machine Learning Assignment 2
-
-Adult Income Prediction using Machine Learning
-
-Prepared as part of the Machine Learning course assignment.

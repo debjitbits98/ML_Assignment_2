@@ -359,7 +359,13 @@ st.table(metric_df)
 
 st.subheader("Classification Report")
 
-st.text(reports[selected_model])
+report = reports[selected_model]
+
+if isinstance(report, dict):
+    report_df = pd.DataFrame(report).transpose()
+    st.dataframe(report_df)
+else:
+    st.text(report)
 
 model_info = {
 

@@ -141,47 +141,12 @@ def preprocess(df):
     df = df.copy()
 
     if "income" in df.columns:
-
         df = df.drop(columns=["income"])
-
-    missing_columns = [
-
-        c for c in features
-
-        if c not in df.columns
-
-    ]
-
-    if len(missing_columns) > 0:
-
-        raise ValueError(
-
-            f"Missing columns : {missing_columns}"
-
-        )
 
     df = df[features]
 
-    for column, encoder in encoders.items():
-
-        if column in df.columns:
-
-            df[column] = df[column].astype(str)
-
-            try:
-
-                df[column] = encoder.transform(df[column])
-
-            except Exception:
-
-                st.error(
-                    f"Unknown category detected in column '{column}'."
-                )
-
-                st.stop()
-
     return df
-    # ==========================================================
+# ==========================================================
 # MAIN APPLICATION
 # ==========================================================
 

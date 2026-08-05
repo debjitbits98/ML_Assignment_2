@@ -68,8 +68,8 @@ try:
 
     models, scaler, encoders, features = load_models()
     
-metrics = joblib.load("models/metrics.pkl")
-reports = joblib.load("models/classification_reports.pkl")
+    metrics = joblib.load("models/metrics.pkl")
+    reports = joblib.load("models/classification_reports.pkl")
 
 except Exception as e:
 

@@ -35,7 +35,7 @@ model = load_model()
 # Upload CSV
 # -------------------------------------------------------
 uploaded_file = st.file_uploader(
-    "Upload Encoded test_data.csv",
+    "Upload Test Dataset (.csv)",
     type=["csv"]
 )
 

@@ -102,6 +102,7 @@ selected_model = st.sidebar.selectbox(
     ]
 
 )
+st.sidebar.success(f"Selected Model\n\n{selected_model}")
 
 uploaded_file = st.sidebar.file_uploader(
 
@@ -233,18 +234,16 @@ else:
     X_input = X
 
 
-with st.spinner("Generating predictions..."):
+if st.button("🚀 Predict"):
 
-    prediction = model.predict(X_input)
+    with st.spinner("Generating predictions..."):
 
-    if hasattr(model, "predict_proba"):
+        prediction = model.predict(X_input)
 
-        probability = model.predict_proba(X_input)
-
-    else:
-
-        probability = None
-
+        if hasattr(model, "predict_proba"):
+            probability = model.predict_proba(X_input)
+        else:
+            probability = None
 
 result = data.copy()
 

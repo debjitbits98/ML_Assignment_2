@@ -228,24 +228,27 @@ scaled_models = [
 ]
 
 
+model = models[selected_model]
+
+scaled_models = [
+    "Logistic Regression",
+    "Decision Tree",
+    "KNN",
+    "Naive Bayes"
+]
+
 if selected_model in scaled_models:
-
     X_input = scaler.transform(X)
-
 else:
-
     X_input = X
 
+# Prediction for ALL models
+prediction = model.predict(X_input)
 
-    prediction = model.predict(X_input)
-
-    if hasattr(model, "predict_proba"):
-
-        probability = model.predict_proba(X_input)
-
-    else:
-
-        probability = None
+if hasattr(model, "predict_proba"):
+    probability = model.predict_proba(X_input)
+else:
+    probability = None
 
 result = data.copy()
 

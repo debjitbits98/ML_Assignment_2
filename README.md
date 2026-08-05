@@ -18,8 +18,6 @@ The objective is to analyze the dataset, preprocess the data, build multiple cla
 Files used:
 
 - adult.data
-- adult.test
-- adult.names
 
 The dataset contains demographic and employment-related information such as:
 
@@ -130,7 +128,7 @@ Each model is evaluated using:
 | Decision Tree | 81.42% |
 | K-Nearest Neighbors | 83.50% |
 | Naive Bayes | 81.02% |
-| Random Forest | **86.28%** |
+| Random Forest | **87.31%** |
 
 ---
 
@@ -140,12 +138,12 @@ The **Random Forest Classifier** achieved the highest overall performance.
 
 Performance Metrics:
 
-- Accuracy : 86.28%
-- Precision : 74.83%
-- Recall : 64.86%
-- F1 Score : 69.49%
-- ROC-AUC : 78.97%
-- MCC : 60.96%
+- Accuracy : 87.31%
+- Precision : 78.58%
+- Recall : 65.05%
+- F1 Score : 71.17%
+- ROC-AUC : 79.71%
+- MCC : 63.95%
 
 The Random Forest model outperformed all other classifiers in terms of overall accuracy, F1 Score, and Matthews Correlation Coefficient, making it the most reliable model for this classification task.
 
@@ -159,11 +157,19 @@ Machine-Learning-Assignment-2/
 │── model.ipynb
 │── app.py
 │── requirements.txt
+│── test_data.csv
 │── README.md
-│── best_model.pkl
-│── adult.data
-│── adult.test
-│── adult.names
+│── models/
+    logistic_regression.pkl
+    decision_tree.pkl
+    knn.pkl
+    naive_bayes.pkl
+    random_forest.pkl
+    scaler.pkl
+    encoders.pkl
+    features.pkl
+    metrics.pkl
+    classification_reports.pkl
 ```
 
 ---

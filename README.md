@@ -193,7 +193,7 @@ Machine-Learning-Assignment-2/
 ### Clone Repository
 
 ```bash
-git clone <repository_link>
+git clone <[repository_link](https://github.com/debjitbits98/ML_Assignment_2)>
 ```
 
 ### Install Requirements

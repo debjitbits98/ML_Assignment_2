@@ -234,10 +234,6 @@ else:
     X_input = X
 
 
-if st.button("🚀 Predict"):
-
-   with st.spinner("Generating predictions..."):
-
     prediction = model.predict(X_input)
 
     if hasattr(model, "predict_proba"):

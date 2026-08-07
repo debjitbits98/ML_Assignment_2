@@ -28,7 +28,7 @@ The objective of this project is to predict whether an individual's annual incom
 Dataset Characteristics:
 
 - Number of Features: 14
-- Number of Instances: More than 32,000
+- Training Dataset: 32,561 instances
 - Classification Type: Binary Classification
 
 Target Variable:
@@ -216,6 +216,8 @@ streamlit run app.py
 The project successfully demonstrates an end-to-end machine learning workflow, from preprocessing and model training to deployment through Streamlit.
 
 Among all implemented models, **Random Forest** achieved the best performance and was selected as the final model.
+
+The Streamlit web application allows users to upload test data, select any of the five implemented models, view evaluation metrics and classification reports, and download prediction results.
 
 ---
 

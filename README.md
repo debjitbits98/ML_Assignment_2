@@ -1,25 +1,42 @@
 # Machine Learning Assignment 2
-## Adult Income Prediction using Machine Learning
+# Adult Income Prediction using Multiple Machine Learning Models
 
 ---
 
-## Project Overview
+## Student Details
 
-This project predicts whether an individual's annual income is **greater than \$50K** or **less than or equal to \$50K** using the Adult Income (Census Income) dataset. Multiple machine learning classification algorithms are implemented, evaluated, and compared based on various performance metrics.
-
-The objective is to analyze the dataset, preprocess the data, build multiple classification models, compare their performance, and identify the best-performing model.
+- **Name:** DEBJIT BISWAS
+- **BITS ID:** 2025DA04158
+- **Programme:** M.Tech (DSE)
+- **Course:** Machine Learning
+- **Assignment:** Assignment 2
 
 ---
 
-## Dataset
+# Problem Statement
+
+The objective of this project is to predict whether an individual's annual income is greater than \$50K or less than or equal to \$50K using supervised machine learning classification algorithms. Multiple classification models are implemented, evaluated, compared, and deployed through a Streamlit web application.
+
+---
+
+# Dataset Description
 
 **Dataset Name:** Adult Income Dataset (Census Income Dataset)
 
-Files used:
+**Source:** UCI Machine Learning Repository
 
-- adult.data
+Dataset Characteristics:
 
-The dataset contains demographic and employment-related information such as:
+- Number of Features: 14
+- Number of Instances: More than 32,000
+- Classification Type: Binary Classification
+
+Target Variable:
+
+- <=50K
+- >50K
+
+Important Features:
 
 - Age
 - Workclass
@@ -34,147 +51,142 @@ The dataset contains demographic and employment-related information such as:
 - Hours per Week
 - Native Country
 
-Target Variable:
+---
 
-- Income
-    - <=50K
-    - >50K
+# GitHub Repository
+
+https://github.com/debjitbits98/ML_Assignment_2
 
 ---
 
-## Machine Learning Workflow
+# Streamlit Application
 
-The project follows the standard Machine Learning pipeline:
+https://mlassignment2-jgx6tc89gxy39zqlcu4opa.streamlit.app/
+
+---
+
+# Machine Learning Workflow
 
 1. Data Loading
-2. Data Exploration
+2. Exploratory Data Analysis
 3. Data Cleaning
-4. Handling Missing Values
-5. Encoding Categorical Variables
-6. Feature Engineering
+4. Missing Value Handling
+5. Feature Encoding
+6. Feature Selection
 7. Train-Test Split
-8. Model Building
+8. Model Training
 9. Model Evaluation
 10. Model Comparison
-11. Selection of Best Model
+11. Streamlit Deployment
 
 ---
 
-## Machine Learning Algorithms Implemented
+# Machine Learning Models Implemented
 
-The following classification algorithms were implemented:
-
-### 1. Logistic Regression
-
-- Simple linear classifier
-- Fast training
-- Strong baseline model
+1. Logistic Regression
+2. Decision Tree
+3. K-Nearest Neighbors (KNN)
+4. Gaussian Naive Bayes
+5. Random Forest (Ensemble)
 
 ---
 
-### 2. Decision Tree Classifier
+# Model Comparison
 
-- Tree-based supervised learning algorithm
-- Easy to interpret
-- Handles nonlinear relationships
-
----
-
-### 3. K-Nearest Neighbors (KNN)
-
-- Distance-based classifier
-- Classifies using nearest neighbors
-- Performs well with scaled features
+| Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
+|--------|---------:|----:|----------:|-------:|---------:|----:|
+| Logistic Regression | 82.78% | 85.67% | 72.42% | 46.05% | 56.30% | 48.06% |
+| Decision Tree | 81.42% | 74.68% | 61.40% | 61.67% | 61.53% | 49.29% |
+| KNN | 83.50% | 75.63% | 67.62% | 60.46% | 63.84% | 53.33% |
+| Naive Bayes | 81.02% | 65.86% | 70.43% | 36.61% | 48.17% | 41.00% |
+| Random Forest | **87.31%** | 79.71% | 78.58% | 65.05% | 71.17% | 63.60% |
 
 ---
 
-### 4. Naive Bayes
+# Model Observations
 
-- Probabilistic classifier
-- Based on Bayes' Theorem
-- Fast and efficient
+### Logistic Regression
+- Good baseline classifier.
+- Performs well on linearly separable patterns.
+- Fast training and prediction.
+
+### Decision Tree
+- Easy to interpret.
+- Captures nonlinear relationships.
+- Can overfit if not controlled.
+
+### K-Nearest Neighbors
+- Performs well after feature scaling.
+- Sensitive to the value of K.
+- Better than Logistic Regression on this dataset.
+
+### Naive Bayes
+- Fast probabilistic classifier.
+- Assumes feature independence.
+- Lower overall accuracy than KNN and Random Forest.
+
+### Random Forest
+- Highest overall accuracy.
+- Strongest F1 Score.
+- Best MCC.
+- Most robust model for this dataset.
 
 ---
 
-### 5. Random Forest Classifier
+# Overall Winner
 
-- Ensemble learning method
-- Uses multiple decision trees
-- Produces robust predictions
-- Best performing model in this project
+**Random Forest Classifier**
+
+Reasons:
+
+- Highest Accuracy
+- Highest F1 Score
+- Best MCC
+- Strong overall classification performance
 
 ---
 
-## Evaluation Metrics
-
-Each model is evaluated using:
+# Evaluation Metrics Used
 
 - Accuracy
+- ROC-AUC Score
 - Precision
 - Recall
 - F1 Score
-- ROC-AUC Score
-- Matthews Correlation Coefficient (MCC)
-- Confusion Matrix
+- Matthews Correlation Coefficient
 - Classification Report
+- Confusion Matrix
 
 ---
 
-## Model Performance Summary
+# Repository Structure
 
-| Model | Accuracy |
-|--------|----------|
-| Logistic Regression | 82.78% |
-| Decision Tree | 81.42% |
-| K-Nearest Neighbors | 83.50% |
-| Naive Bayes | 81.02% |
-| Random Forest | **87.31%** |
-
----
-
-## Best Model
-
-The **Random Forest Classifier** achieved the highest overall performance.
-
-Performance Metrics:
-
-- Accuracy : 87.31%
-- Precision : 78.58%
-- Recall : 65.05%
-- F1 Score : 71.17%
-- ROC-AUC : 79.71%
-- MCC : 63.95%
-
-The Random Forest model outperformed all other classifiers in terms of overall accuracy, F1 Score, and Matthews Correlation Coefficient, making it the most reliable model for this classification task.
-
----
-
-## Repository Structure
-
-```
-Machine-Learning-Assignment-2/
-
-│── model.ipynb
-│── app.py
-│── requirements.txt
-│── test_data.csv
-│── README.md
-│── models/
-    logistic_regression.pkl
-    decision_tree.pkl
-    knn.pkl
-    naive_bayes.pkl
-    random_forest.pkl
-    scaler.pkl
-    encoders.pkl
-    features.pkl
-    metrics.pkl
-    classification_reports.pkl
+```text
+ML_Assignment_2/
+│
+├── app.py
+├── model.ipynb
+├── README.md
+├── requirements.txt
+├── test_data.csv
+├── adult.data
+│
+└── models/
+    ├── logistic_regression.pkl
+    ├── decision_tree.pkl
+    ├── knn.pkl
+    ├── naive_bayes.pkl
+    ├── random_forest.pkl
+    ├── scaler.pkl
+    ├── encoders.pkl
+    ├── features.pkl
+    ├── metrics.pkl
+    └── classification_reports.pkl
 ```
 
 ---
 
-## Technologies Used
+# Technologies Used
 
 - Python
 - Jupyter Notebook
@@ -188,62 +200,31 @@ Machine-Learning-Assignment-2/
 
 ---
 
-## How to Run
-
-### Clone Repository
+# How to Run
 
 ```bash
-git clone <[repository_link](https://github.com/debjitbits98/ML_Assignment_2)>
-```
-
-### Install Requirements
-
-```bash
+git clone https://github.com/debjitbits98/ML_Assignment_2
+cd ML_Assignment_2
 pip install -r requirements.txt
-```
-
-### Run Notebook
-
-```bash
-jupyter notebook
-```
-
-Open:
-
-```
-model.ipynb
-```
-
-Run all cells.
-
----
-
-## Streamlit Application
-
-To launch the web application:
-
-```bash
 streamlit run app.py
 ```
 
 ---
 
-## Results
+# Results
 
-The project successfully demonstrates the complete machine learning workflow from preprocessing to model comparison.
+The project successfully demonstrates an end-to-end machine learning workflow, from preprocessing and model training to deployment through Streamlit.
 
-Among all implemented models, the Random Forest Classifier achieved the highest performance and was selected as the final prediction model.
+Among all implemented models, **Random Forest** achieved the best performance and was selected as the final model.
 
 ---
 
-## Future Improvements
+# Future Improvements
 
 - Hyperparameter tuning using GridSearchCV
 - Cross-validation
 - Feature selection
-- Ensemble stacking methods
 - XGBoost implementation
 - LightGBM implementation
-- Model deployment on cloud platforms
-
----
+- Ensemble stacking
+- Docker deployment

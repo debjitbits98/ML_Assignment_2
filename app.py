@@ -362,8 +362,6 @@ st.table(metric_df)
 
 st.subheader("Classification Report")
 
-st.subheader("Classification Report")
-
 report = reports[selected_model]
 
 if isinstance(report, dict):

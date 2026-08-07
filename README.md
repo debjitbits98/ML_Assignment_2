@@ -103,46 +103,29 @@ https://mlassignment2-jgx6tc89gxy39zqlcu4opa.streamlit.app/
 
 ---
 
-# Model Observations
+## Model Observations
 
-### Logistic Regression
-- Good baseline classifier.
-- Performs well on linearly separable patterns.
-- Fast training and prediction.
-
-### Decision Tree
-- Easy to interpret.
-- Captures nonlinear relationships.
-- Can overfit if not controlled.
-
-### K-Nearest Neighbors
-- Performs well after feature scaling.
-- Sensitive to the value of K.
-- Better than Logistic Regression on this dataset.
-
-### Naive Bayes
-- Fast probabilistic classifier.
-- Assumes feature independence.
-- Lower overall accuracy than KNN and Random Forest.
-
-### Random Forest
-- Highest overall accuracy.
-- Strongest F1 Score.
-- Best MCC.
-- Most robust model for this dataset.
+| Model | Observation |
+|-------|-------------|
+| **Logistic Regression** | Served as a good baseline classifier. It provided fast training and prediction with stable performance, but achieved lower recall than the best-performing model. |
+| **Decision Tree** | Successfully captured nonlinear relationships and was easy to interpret. However, its overall performance was slightly lower than the ensemble-based Random Forest model. |
+| **K-Nearest Neighbors (KNN)** | Performed well after feature scaling and achieved better classification performance than Logistic Regression and Gaussian Naive Bayes. Prediction time is comparatively higher due to distance calculations. |
+| **Gaussian Naive Bayes** | Trained very quickly and handled the binary classification problem efficiently, but produced comparatively lower performance because of its feature independence assumption. |
+| **Random Forest** | Achieved the highest Accuracy (87.31%), strongest F1 Score, and highest MCC among all evaluated models. It provided the best balance between precision and recall and was selected as the final model. |
 
 ---
 
-# Overall Winner
+## Overall Winning Model
 
 **Random Forest Classifier**
 
-Reasons:
+### Reason for Selection
 
-- Highest Accuracy
-- Highest F1 Score
-- Best MCC
-- Strong overall classification performance
+- Highest Accuracy (87.31%)
+- Best balance of Precision, Recall and F1 Score
+- Highest Matthews Correlation Coefficient (MCC)
+- Most consistent overall classification performance
+- Selected as the final model for deployment in the Streamlit application
 
 ---
 

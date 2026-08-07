@@ -34,7 +34,7 @@ Dataset Characteristics:
 Target Variable:
 
 - <=50K
-- >50K
+-  >50K
 
 Important Features:
 

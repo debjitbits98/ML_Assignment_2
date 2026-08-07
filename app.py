@@ -362,14 +362,26 @@ st.table(metric_df)
 
 st.subheader("Classification Report")
 
+st.subheader("Classification Report")
+
 report = reports[selected_model]
 
 if isinstance(report, dict):
-    report_df = pd.DataFrame(report).transpose()
-    st.dataframe(report_df)
-else:
-    st.text(report)
 
+    report_df = pd.DataFrame(report).transpose()
+
+    # Round numeric columns
+    report_df = report_df.round(2)
+
+    st.dataframe(
+        report_df,
+        use_container_width=True
+    )
+
+else:
+
+    st.code(report)
+    
 model_info = {
 
     "Random Forest":
